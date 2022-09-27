@@ -30,8 +30,7 @@ const WithdrawlComponent = () => {
             console.log("Something went wrong")
         })
     }
-  return (
-    
+  return (    
     // <div>
         <Card>       
        <Card.Body>

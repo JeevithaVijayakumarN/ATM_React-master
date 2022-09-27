@@ -49,7 +49,7 @@ const DepositComponent = () => {
             setDepositAmount({ ...depositAmount, amount: event.target.value });
           }}
           />
-        <Button variant="outline-secondary" onClick={(event) => depositApi(event)}>deposit</Button>
+        <Button variant="outline-secondary" onClick={(event) =>   depositApi(event)}>deposit</Button>
       </InputGroup>
         </Card.Body>
         <Card.Footer>

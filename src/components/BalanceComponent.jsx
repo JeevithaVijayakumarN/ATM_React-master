@@ -3,20 +3,20 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { Card } from "react-bootstrap";
 import Form from 'react-bootstrap/Form';
-import { useParams } from 'react-router-dom';
 import atmApi from '../api/atmApi';
 
 
 const BalanceComponent = () => {
-  const [balance,setBalance]=useState({})
-  useEffect(()=>{
+  const [balance,setBalance]=useState([])
+  
+  useEffect(()=>{ 
     atmApi
-    .get(`/amount/all${useParams.id}`)
+    .get(`/amount/all`)
     .then((res)=>
     {
-      if(res.data.data){
-        setBalance(res.data.data)
-      }else if(res.data.error){
+      if(res.data){
+        setBalance(res.data)
+      }else if(res.data){
         console.log(res.data.error.message)
 
       }else{
@@ -36,7 +36,7 @@ const BalanceComponent = () => {
           <Card.Text>
            Your available balance is:
            <Form.Control
-          type="text" disabled value={balance.amount}/>
+          type="text" disabled value={balance}/>
           </Card.Text>
         </Card.Body>
         <Card.Footer>
