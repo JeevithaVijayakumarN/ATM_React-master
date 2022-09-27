@@ -3,14 +3,15 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { Card } from "react-bootstrap";
 import Form from 'react-bootstrap/Form';
+import { useParams } from 'react-router-dom';
 import atmApi from '../api/atmApi';
 
 
 const BalanceComponent = () => {
-  const [balance,setBalance]=useState({amount:""})
+  const [balance,setBalance]=useState({})
   useEffect(()=>{
     atmApi
-    .get(`/amount/all`)
+    .get(`/amount/all${useParams.id}`)
     .then((res)=>
     {
       if(res.data.data){
