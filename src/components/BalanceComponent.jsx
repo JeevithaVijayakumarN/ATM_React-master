@@ -41,6 +41,7 @@ const BalanceComponent = () => {
         </Card.Body>
         <Card.Footer>
           hdfc.atm
+          
         </Card.Footer>
       </Card>   
     //  </div> 
